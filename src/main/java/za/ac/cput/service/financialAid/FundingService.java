@@ -9,5 +9,5 @@ public interface FundingService extends IService<Funding, String> {
 
     Set<Funding> getAll();
 
-    Set<Funding> searchByName(String name);
+    Set<String> searchByName(String name);
 }

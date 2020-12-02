@@ -16,7 +16,7 @@ public class CourseServiceImplTest {
 
     @Autowired
     private CourseService service;
-    private static Course course = CourseFactory.createCourse("ADP", "ADP23","15000");
+    private static Course course = CourseFactory.createCourse("ADP", "ADP23","15000", 53);
 
 //    private static SubjectRepository subjectRepository = SubjectRepositoryImpl.getRepository();
 //    private static Subject subject = SubjectFactory.createSubject("App Development", 84);
@@ -29,12 +29,12 @@ public class CourseServiceImplTest {
         System.out.println("All courses " + courses);
     }
 
-    @Test
-    public void e_searchByName() {
-        Set<Course> courses = service.searchByName("ADP");
-        Assert.assertEquals(1, courses.size());
-        System.out.println("All courses by name " + courses);
-    }
+//    @Test
+//    public void e_searchByName() {
+//        Set<Course> courses = service.searchByName("ADP");
+//        Assert.assertEquals(1, courses.size());
+//        System.out.println("All courses by name " + courses);
+//    }
 
     @Test
     public void a_create() {

@@ -26,6 +26,9 @@ public class FundingController {
     @GetMapping("/all")
     public Set<Funding> getAll() {return fundingService.getAll();}
 
+    @GetMapping("/search/{name}")
+    public Set<String> searchBy(@PathVariable String name) {return fundingService.searchByName(name);}
+
     @GetMapping("/read/{id}")
     public Funding read(@PathVariable String id)
     {
@@ -42,11 +45,5 @@ public class FundingController {
     public boolean delete(@PathVariable String id)
     {
         return fundingService.delete(id);
-    }
-
-    @GetMapping("/searchby/{name}")
-    public Set<Funding> searchByName(@PathVariable String name)
-    {
-        return fundingService.searchByName(name);
     }
 }

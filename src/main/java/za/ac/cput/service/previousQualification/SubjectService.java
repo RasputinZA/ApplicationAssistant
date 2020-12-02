@@ -10,6 +10,5 @@ import java.util.*;
 public interface SubjectService extends IService<Subject, String> {
 
     Set<Subject> getAll();
-
     Set<Subject> searchByName(String name);
 }

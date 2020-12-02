@@ -24,8 +24,8 @@ public class InstitutionController {
         return institutionService.create(newInstitution);
     }
 
-    @GetMapping("/searchby/{name}")
-    public Set<Institution> searchByName(@PathVariable String name)
+    @GetMapping("/search/{name}")
+    public Set<String> searchByName(@PathVariable String name)
     {
         return institutionService.searchByName(name);
     }

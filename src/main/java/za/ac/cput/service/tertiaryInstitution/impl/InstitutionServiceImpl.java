@@ -23,13 +23,13 @@ public class InstitutionServiceImpl implements InstitutionService {
     }
 
     @Override
-    public Set<Institution> searchByName(String name) {
+    public Set<String> searchByName(String name) {
         Set<Institution> institutions = getAll();
-        Set<Institution> institutionsByName = new HashSet<>();
+        Set<String> institutionsByName = new HashSet<>();
         for(Institution institution : institutions){
             if(institution.getInstitutionName().trim().toLowerCase().contains(name))
             {
-                institutionsByName.add(institution);
+                institutionsByName.add("Institution Code: " + institution.getInstitutionCode() + "/Institution Name: " + institution.getInstitutionName());
             }
         }
         return institutionsByName;

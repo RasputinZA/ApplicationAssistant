@@ -14,9 +14,7 @@ public class Course {
     private String courseName;
     private String courseCode;
     private String courseFees;
-
-
-
+    private int courseRequirement;
 
     protected Course(){}
 
@@ -25,6 +23,7 @@ public class Course {
         this.courseCode = builder.courseCode;
         this.courseName = builder.courseName;
         this.courseFees = builder.courseFees;
+        this.courseRequirement = builder.courseRequirement;
     }
 
     public String getCourseId() { return courseId; }
@@ -41,13 +40,18 @@ public class Course {
         return courseFees;
     }
 
+    public int getCourseRequirement() {
+        return courseRequirement;
+    }
+
     @Override
     public String toString() {
         return "Course{" +
                 "courseId='" + courseId + '\'' +
                 ", courseName='" + courseName + '\'' +
                 ", courseCode='" + courseCode + '\'' +
-                ", courseFees=' R" + courseFees + '\'' +
+                ", courseFees='" + courseFees + '\'' +
+                ", courseRequirement='" + courseRequirement + '\'' +
                 '}';
     }
 
@@ -56,6 +60,7 @@ public class Course {
         private String courseName;
         private String courseCode;
         private String courseFees;
+        private int courseRequirement;
 
         public Builder setCourseId(String courseId) {
             this.courseId = courseId;
@@ -77,11 +82,17 @@ public class Course {
             return this;
         }
 
+        public Builder setCourseRequirement (int courseRequirement){
+            this.courseRequirement =courseRequirement;
+            return this;
+        }
+
         public Builder copy (Course course){
             this.courseId = course.courseId;
             this.courseName = course.courseName;
             this.courseCode = course.courseCode;
             this.courseFees = course.courseFees;
+            this.courseRequirement = course.courseRequirement;
             return this;
         }
 

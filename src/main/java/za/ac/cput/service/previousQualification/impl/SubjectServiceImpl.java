@@ -7,8 +7,7 @@ import za.ac.cput.entity.previousQualification.Subject;
 import za.ac.cput.repository.previousQualification.SubjectRepository;
 import za.ac.cput.service.previousQualification.SubjectService;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -36,6 +35,17 @@ public class SubjectServiceImpl implements SubjectService {
         return subjectsByName;
 
     }
+
+   /** @Override
+    public Set<Subject> sorting(){
+        Set<Subject> subjects = getAll();
+        Set<Subject> subjectsSorted = new HashSet<>();
+        List<Subject> sortedList = new ArrayList<>(subjectsSorted);
+        sortedList.sort(Comparator.comparing(Subject::getSubjectName));
+
+
+        return  subjectsSorted;
+    }*/
 
     @Override
     public Subject create(Subject subject) {

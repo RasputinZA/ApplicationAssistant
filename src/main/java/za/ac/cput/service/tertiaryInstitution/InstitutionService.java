@@ -9,5 +9,5 @@ public interface InstitutionService extends IService<Institution, String> {
 
     Set<Institution> getAll();
 
-    Set<Institution> searchByName(String name);
+    Set<String> searchByName(String name);
 }

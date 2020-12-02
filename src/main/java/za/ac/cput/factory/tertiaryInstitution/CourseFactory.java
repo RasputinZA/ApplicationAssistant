@@ -7,16 +7,15 @@ import za.ac.cput.util.StringHelper;
 
 public class CourseFactory {
 
-    public static Course createCourse(String courseName, String courseCode, String courseFees)
+    public static Course createCourse(String courseName, String courseCode, String courseFees, int courseRequirement)
     {
         if (StringHelper.isNullorEmpty(courseName)) return new Course.Builder().build();
         String courseId = GenericHelper.generateRandom();
-        //Set<Subject> courseRequirement = SubjectRepositoryImpl.getRepository().getAll();
         Course course = new Course.Builder()
                 .setCourseId(courseId)
                 .setCourseName(courseName)
                 .setCourseCode(courseCode)
-                //.setCourseRequirement(courseRequirement)
+                .setCourseRequirement(courseRequirement)
                 .setCourseFees(courseFees)
                 .build();
         return course;

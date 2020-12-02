@@ -16,4 +16,5 @@ public interface QualificationService extends IService <Qualification, String> {
 
     //ArrayList<Course> checkIfQualifies(Qualification qualification);
 
+
 }

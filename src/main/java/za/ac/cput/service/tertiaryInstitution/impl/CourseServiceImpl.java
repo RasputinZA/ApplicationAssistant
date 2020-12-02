@@ -22,15 +22,27 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public Set<Course> searchByName(String name) {
+    public Set<String> searchByName(String name) {
         Set<Course> courses = getAll();
-        Set<Course> coursesWith = new HashSet<>();
+        Set<String> coursesWith = new HashSet<>();
         for (Course course : courses) {
             if (course.getCourseName().trim().toLowerCase().contains(name)) {
-                coursesWith.add(course);
+                coursesWith.add("Course Code: " + course.getCourseCode() + "/Course Name: " + course.getCourseName() + "/Course Fee: " + course.getCourseFees() + "/Course Requirement: " + course.getCourseRequirement());
             }
         }
         return coursesWith;
+    }
+
+    @Override
+    public Set<String> getQualifiedCourses(double markAverage) {
+        Set<Course> courses = getAll();
+        Set<String> coursesQualified = new HashSet<>();
+        for (Course course : courses) {
+            if (markAverage >= course.getCourseRequirement()) {
+                coursesQualified.add("Course Code: " + course.getCourseCode() + "/Course Name: " + course.getCourseName() + "/Course Fee: " + course.getCourseFees());
+            }
+        }
+        return coursesQualified;
     }
 
     @Override

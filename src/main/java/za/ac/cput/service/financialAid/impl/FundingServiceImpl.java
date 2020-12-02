@@ -21,13 +21,13 @@ public class FundingServiceImpl implements FundingService {
     }
 
     @Override
-    public Set<Funding> searchByName(String name) {
+    public Set<String> searchByName(String name) {
         Set<Funding> fundings = getAll();
-        Set<Funding> fundingsWith = new HashSet<>();
+        Set<String> fundingsWith = new HashSet<>();
         for (Funding funding : fundings) {
             if (funding.getFundingName().trim().toLowerCase().contains(name))
             {
-                fundingsWith.add(funding);
+                fundingsWith.add("Funding Name: " + funding.getFundingName());
             }
         }
         return fundingsWith;

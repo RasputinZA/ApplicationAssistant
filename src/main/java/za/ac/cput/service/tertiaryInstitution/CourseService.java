@@ -9,6 +9,8 @@ public interface CourseService extends IService<Course, String> {
     Set<Course> getAll();
 
 
-    Set<Course> searchByName(String name);
+    Set<String> searchByName(String name);
+
+    Set<String> getQualifiedCourses(double markAverage);
 
 }

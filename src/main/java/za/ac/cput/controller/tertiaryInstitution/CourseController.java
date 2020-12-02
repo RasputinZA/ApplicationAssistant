@@ -19,12 +19,15 @@ public class CourseController {
 
     @PostMapping("/create")
     public Course create(@RequestBody Course course) {
-        Course newCourse = CourseFactory.createCourse(course.getCourseName(), course.getCourseCode(), course.getCourseFees());
+        Course newCourse = CourseFactory.createCourse(course.getCourseName(), course.getCourseCode(), course.getCourseFees(), course.getCourseRequirement());
         return courseService.create(newCourse);
     }
 
-    @GetMapping("/searchby/{name}")
-    public Set<Course> searchByName(@PathVariable String name) { return courseService.searchByName(name); }
+    @GetMapping("/search/{name}")
+    public Set<String> searchByName(@PathVariable String name) { return courseService.searchByName(name); }
+
+    @GetMapping("/getcourses/{markAvg}")
+    public Set<String> getQualifiedCourses(@PathVariable double markAvg) { return courseService.getQualifiedCourses(markAvg); }
 
     @GetMapping("/read/{courseId}")
     public Course read(@PathVariable String courseId) { return courseService.read(courseId); }

@@ -31,12 +31,12 @@ public class InstitutionServiceImplTest {
 
     }
 
-    @Test
-    public void e_searchByName() {
-        Set<Institution> institutions = service.searchByName("CPUT");
-        Assert.assertEquals(1, institutions.size());
-        System.out.println("Get All sorted by name: " + institutions);
-    }
+//    @Test
+//    public void e_searchByName() {
+//        Set<Institution> institutions = service.searchByName("CPUT");
+//        Assert.assertEquals(1, institutions.size());
+//        System.out.println("Get All sorted by name: " + institutions);
+//    }
 
     @Test
     public void a_create() {
