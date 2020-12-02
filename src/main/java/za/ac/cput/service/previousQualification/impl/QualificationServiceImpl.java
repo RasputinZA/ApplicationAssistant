@@ -37,7 +37,7 @@ public class QualificationServiceImpl implements QualificationService {
         return qualificationsStartingWith;
     }
 
-    /*@Override
+    @Override
     public ArrayList<Course> checkIfQualifies(Qualification qualification) {
         ArrayList<Course> subjectsQualified = new ArrayList<>();
         Set<Course> courseLIst = CourseServiceImpl.getService().getAll();
@@ -64,7 +64,7 @@ public class QualificationServiceImpl implements QualificationService {
             }
         }
         return subjectsQualified;
-    }*/
+    }
 
     @Override
     public Qualification create(Qualification qualification) {
